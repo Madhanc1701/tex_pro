@@ -23,6 +23,7 @@ import Stock from './components/stock.jsx';
 import Add_Stock from './components/add_stock.jsx';
 import Sales from './components/sales.jsx';
 import Salary from './components/salary.jsx';
+import Login from './components/login.jsx';
 import './App.css';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/add-stock" element={<Add_Stock />} />
             <Route path="/sales" element={<Sales />} />
             <Route path="/salary" element={<Salary />} />
+            <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </Router>

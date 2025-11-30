@@ -21,6 +21,7 @@
 // export default Navbar;
 import React from 'react';
 import './navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -35,7 +36,9 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-auth">
-          <button className="login-btn">Login</button>
+          <Link to="/login">
+            <button className="login-btn">Login</button>
+          </Link>
         </div>
       </div>
     </nav>
