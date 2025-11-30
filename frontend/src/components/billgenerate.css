@@ -235,6 +235,18 @@
   color: #2c3e50;
 }
 
+.form-group input[type="date"] {
+  background-color: white;
+  color: #2c3e50;
+  cursor: pointer;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 1;
+  filter: invert(1);
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
@@ -377,9 +389,17 @@
     padding: 1.5rem;
   }
 
-  .bill-header-section .form-row,
+  /* Keep 3-column layout on mobile for bill header */
+  .bill-header-section .form-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 1rem;
+  }
+
+  /* Keep 3-column layout on mobile for item inputs */
   .form-row {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
 
@@ -388,12 +408,13 @@
   }
 
   .modal-actions {
-    flex-direction: column-reverse;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 
   .cancel-btn,
   .submit-btn {
-    width: 100%;
+    width: auto;
   }
 
   .added-rows-section,
@@ -403,10 +424,21 @@
 
   .row-display-item {
     gap: 0.8rem;
+    font-size: 0.85rem;
   }
 
   .row-display-item span {
     font-size: 0.85rem;
+  }
+
+  /* Adjust label and input font sizes for mobile */
+  .form-group label {
+    font-size: 0.85rem;
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+    padding: 0.7rem;
   }
 }
 
@@ -427,16 +459,4 @@
 
 .autocomplete-dropdown::-webkit-scrollbar-thumb:hover {
   background: #5568d3;
-}
-
-.form-group input[type="date"] {
-  background-color: white;
-  color: #2c3e50;
-  cursor: pointer;
-}
-
-.form-group input[type="date"]::-webkit-calendar-picker-indicator {
-  cursor: pointer;
-  opacity: 1;
-  filter: invert(1);
 }
